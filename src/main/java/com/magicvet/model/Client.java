@@ -10,6 +10,7 @@ public class Client {
 	private String lastName;
 	private String email;
 	private List<Pet> pets = new ArrayList<>();
+	private Location location;
 
 	@Override
 	public String toString() {
@@ -17,6 +18,7 @@ public class Client {
 				+ "\n\tfirstName = " + firstName
 				+ ", lastName = " + lastName
 				+ ", email = " + email
+				+ ", location = " + location
 				+ ",\n\tpets = " + pets
 				+ "\n}";
 	}
@@ -61,15 +63,27 @@ public class Client {
 		return email;
 	}
 
-	public List<Pet> getPet() {
+	public List<Pet> getPets() {
 		return pets;
 	}
 
-	public void setPet(List<Pet> pets) {
+	public void setPets(List<Pet> pets) {
 		this.pets = pets;
 	}
 
 	public void addPet(Pet pet) {
 		pets.add(pet);
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
+	public enum Location {
+		KYIV, LVIV, ODESA
 	}
 }
